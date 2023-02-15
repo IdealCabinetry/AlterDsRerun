@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Rerun Log Manager";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+@*<div class="btn-group-vertical">
+    <button type="button" class="btn btn-primary">Get All Items</button>
+   <button type="button" class="btn btn-primary">Find Item By ID</button>
+    <button type="button" class="btn btn-primary">Find Item By Name</button>
+    <button type="button" class="btn btn-primary">Find Item By Processed Date</button>
+</div>*@
+
+@*<div>
+    <ul>
+        @for(int i = 0; i < @ViewBag.GetAll.Length; i++)
+        {
+            <p1>ID: <li>@ViewBag.GetAll[i].Id</li></p1>
+            <p1>Name: <li>@ViewBag.GetAll[i].Item</li></p1>
+            <p1>Processed Date: <li>@ViewBag.GetAll[i].ProcessedDate</li></p1>
+            <hr />
+        }
+    </ul>
+</div>*@
+
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <form>
+            <label>Get All Items</label><br>
+            <input type="submit" name="button" class="btn btn-primary" value="GetAllItems" />
+        </form>
+        <form>
+            <label>Get Item By ID</label><br>
+            <input type="number" name="id" value="GetItemById" required>
+            <input type="submit" name="button" class="btn btn-primary" value="GetItemById" />
+        </form>
+        <form>
+            <label>Get Item By Name</label><br>
+            <input type="text" name="name" maxlength="20" required>
+            <input type="submit" name="button" class="btn btn-primary" value="GetItemByName" />
+        </form>
+        <form>
+            <label>Get Item By Processed Date</label><br>
+            <input type="date" name="date" required>
+            <input type="submit" name="button" class="btn btn-primary" value="GetItemsByPD" />
+        </form>
+        <form>
+             <form>
+                <label>Remove Item By ID</label><br>
+                <input type="number" name="id" value="RemoveItem" required>
+@*                <input type="text" name="name" maxlength="20" required>
+                <input type="date" name="date" required>*@
+                <input type="submit" name="button" class="btn btn-primary" value="RemoveItem" />
+            </form>
+            <form>
+                <label>Insert New Item</label><br>
+                <input type="number" name="id" value="InsertItem" required>
+                <input type="text" name="name" maxlength="20" required>
+                <input type="date" name="date" required>
+                <input type="submit" name="button" class="btn btn-primary" value="InsertItem" />
+            </form>
+           
+            <form>
+                <label>Update Item By ID</label><br>
+                <input type="number" name="id" value="UpdateItem" required>
+                <input type="text" name="name" maxlength="20" required>
+                <input type="date" name="date" required>
+                <input type="submit" name="button" class="btn btn-primary" value="UpdateItem" />
+            </form>
+        </form>
+    }
+</div>
+<div>
+    <h6>@ViewBag.Confirmation</h6>
+</div>
+<div>
+    <div>
+        <ul class="list-group">
+            @if (ViewBag.IsListBeingUsed)
+            {
+                @for (int i = 0; i < @ViewBag.Results.Length; i++)
+                {
+                    @try
+                    {
+                         <p1>ID: <li class="list-group-item">@ViewBag.Results[i].Id</li></p1>
+                    <p1>Name: <li class="list-group-item">@ViewBag.Results[i].Item</li></p1>
+                    <p1>Processed Date: <li class="list-group-item">@ViewBag.Results[i].ProcessedDate</li></p1>
+                        <hr />
+                    } catch(Exception exc)
+                    {
+                        <h2>Could Not Find Item Requested</h2>
+                    }
+                   
+                }
+            }
+
+        </ul>
+    </div>
+</div>
