@@ -9,6 +9,14 @@ namespace AlterDSLib
 {
     public abstract class IdealDSRerunDatabase : SQLQueries
     {
+        public static string _connectionString 
+        { 
+            get 
+            { 
+                return "data source=AW-BARTOW-SQL3;\r\n   initial catalog=inSight;persist security info=True; \r\n   Integrated Security=SSPI;";
+            }
+        }
+        
         public static bool HasConnection(string connectionString)
         {
             try

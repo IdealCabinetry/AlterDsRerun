@@ -8,6 +8,10 @@ namespace AlterDSLib
 {
     public class IdealDSRerunService : IdealDSRerunDatabase
     {
+        public string GetConnectionString()
+        {
+            return IdealDSRerunDatabase._connectionString;
+        }
         public static IdealDSRerunModel[] RetrieveAllItems(string connectionString)
         {
             return IdealDSRerunDatabase.RetrieveAllItemsDB(connectionString);

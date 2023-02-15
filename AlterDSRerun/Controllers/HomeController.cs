@@ -8,7 +8,7 @@ namespace AlterDSRerun.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        string connectionString = "data source=AW-BARTOW-SQL3;\r\n   initial catalog=inSight;persist security info=True; \r\n   Integrated Security=SSPI;";
+        
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -28,12 +28,12 @@ namespace AlterDSRerun.Controllers
             switch(button)
             {
                 case "GetAllItems":
-                    ViewBag.Results = IdealDSRerunService.RetrieveAllItemsDB(connectionString);
+                    ViewBag.Results = IdealDSRerunService.RetrieveAllItemsDB(IdealDSRerunService._connectionString);
                     break;
                 case "GetItemById":
                     try
                     {
-                        models.Add(IdealDSRerunService.GetItemById(connectionString, id));
+                        models.Add(IdealDSRerunService.GetItemById(IdealDSRerunService._connectionString, id));
                         ViewBag.Results = models.ToArray();
                     } catch(Exception ex)
                     {
@@ -41,28 +41,28 @@ namespace AlterDSRerun.Controllers
                     }
                     break;
                 case "GetItemByName":
-                    models.Add(IdealDSRerunService.GetItemByName(connectionString, name));
+                    models.Add(IdealDSRerunService.GetItemByName(IdealDSRerunService._connectionString, name));
                     ViewBag.Results = models.ToArray();
                     break;
                 case "GetItemsByPD":
-                    ViewBag.Results = IdealDSRerunService.RetrieveAllItemsByProcessedDate(connectionString, ConvertedDate(date));
+                    ViewBag.Results = IdealDSRerunService.RetrieveAllItemsByProcessedDate(IdealDSRerunService._connectionString, ConvertedDate(date));
                    // models.Add(new IdealDSRerunModel(0,ConvertedDate(date), date));
                    // ViewBag.Results = models.ToArray();
                     break;
                 case "InsertItem":
                     ViewBag.IsListBeingUsed = false;
-                    ViewBag.Confirmation = IdealDSRerunService.InsertItem(connectionString, id,name,date.ToString()) ? "Item Added Successfully!" : "Could Not Add Item";
+                    ViewBag.Confirmation = IdealDSRerunService.InsertItem(IdealDSRerunService._connectionString, id,name,date.ToString()) ? "Item Added Successfully!" : "Could Not Add Item";
                     break;
                 case "RemoveItem":
                     ViewBag.IsListBeingUsed = false;
-                    ViewBag.Confirmation = IdealDSRerunService.RemoveItemById(connectionString, id) ? "Item Removed Successfully!" : "Could Not Remove Item";
+                    ViewBag.Confirmation = IdealDSRerunService.RemoveItemById(IdealDSRerunService._connectionString, id) ? "Item Removed Successfully!" : "Could Not Remove Item";
                     break;
                 case "UpdateItem":
                     ViewBag.IsListBeingUsed = false;
-                    ViewBag.Confirmation = IdealDSRerunService.UpdateItemById(connectionString, id, name, date.ToString()) ? "Item Updated Successfully!" : "Could Not Update Item";
+                    ViewBag.Confirmation = IdealDSRerunService.UpdateItemById(IdealDSRerunService._connectionString, id, name, date.ToString()) ? "Item Updated Successfully!" : "Could Not Update Item";
                     try
                     {
-                        models.Add(IdealDSRerunService.GetItemById(connectionString, id));
+                        models.Add(IdealDSRerunService.GetItemById(IdealDSRerunService._connectionString, id));
                         ViewBag.Results = models.ToArray();
                     }
                     catch (Exception ex)
