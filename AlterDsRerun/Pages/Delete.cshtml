@@ -1,0 +1,17 @@
+﻿@page
+@using AlterDSLib;
+@model AlterDsRerun.Pages.DeleteModel
+@{
+    try
+    {
+        int id = int.Parse(Request.Query["id"]);
+
+        IdealDSRerunService.RemoveItemById(IdealDSRerunService._connectionString, id);
+    } catch(Exception exc)
+    {
+        @Html.Display(exc.Message)
+        ;
+    }
+
+    Response.Redirect("/Index");
+}

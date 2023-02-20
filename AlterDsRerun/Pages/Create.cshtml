@@ -1,0 +1,64 @@
+﻿@page
+@model AlterDsRerun.Pages.CreateModel
+@{
+}
+
+<br />
+<h2>New Log Item</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">
+            ID
+        </label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" name="id" value="@Model.idealModel.id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">
+            Item
+        </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="item" value="@Model.idealModel.Item" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">
+            Processed Date
+        </label>
+        <div class="col-sm-6">
+            <label for="ProcessedDate"><i>Format: MM/dd/yyyy HH:mm:ss AM or PM </i></label>
+            <input type="datetime" class="form-control" name="ProcessedDate" value="@Model.idealModel.ProcessedDate" placeholder="1/1/9999 99:12:60 AM" />
+        </div>
+    </div>
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alertalert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+           <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>
+
+

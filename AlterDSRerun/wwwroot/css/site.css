@@ -1,5 +1,8 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -9,21 +12,24 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+
 }
 
 body {
   margin-bottom: 60px;
-  background-color:beige
+  background-color:navajowhite;
 }
 
-label {
-    margin-bottom: 2%;
-    margin-top: .5%;
-}
-
-input {
-    margin-right: 1%;
+.bottomAdjuster {
+    width: 150px;
+    margin-left:1%;
+    margin-top:.5%;
     margin-bottom: .5%;
+}
+
+.topAdjuster {
+    width: 150px;
+    margin-top: 1%;
 }

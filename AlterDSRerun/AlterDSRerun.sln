@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlterDSRerun", "AlterDSRerun.csproj", "{E3C81966-2614-4BA8-AF5A-4D6DD1D9570C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlterDsRerun", "AlterDsRerun.csproj", "{4E2316C4-B768-459C-BC07-CF570A632C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlterDSRerunTestConsole", "..\AlterDSRerunTestConsole\AlterDSRerunTestConsole.csproj", "{E208EA9C-C9D1-4A1F-BC76-CD2C150A34F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlterDSLib", "\\aw-bartow-fs1\MyDocs\Jragasa\My Documents\repo\AlterDsRerun\AlterDSLib\AlterDSLib.csproj", "{5FB64C36-B407-4CF1-8662-8FC705A94152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlterDSLib", "..\AlterDSLib\AlterDSLib.csproj", "{12894214-62AD-47FB-B795-FD7D0D5412E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "..\TestConsole\TestConsole.csproj", "{DEE3F67D-0AC5-4C99-9CCC-FF455BD979A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3C81966-2614-4BA8-AF5A-4D6DD1D9570C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3C81966-2614-4BA8-AF5A-4D6DD1D9570C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3C81966-2614-4BA8-AF5A-4D6DD1D9570C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3C81966-2614-4BA8-AF5A-4D6DD1D9570C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E208EA9C-C9D1-4A1F-BC76-CD2C150A34F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E208EA9C-C9D1-4A1F-BC76-CD2C150A34F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E208EA9C-C9D1-4A1F-BC76-CD2C150A34F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E208EA9C-C9D1-4A1F-BC76-CD2C150A34F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12894214-62AD-47FB-B795-FD7D0D5412E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12894214-62AD-47FB-B795-FD7D0D5412E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12894214-62AD-47FB-B795-FD7D0D5412E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12894214-62AD-47FB-B795-FD7D0D5412E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2316C4-B768-459C-BC07-CF570A632C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2316C4-B768-459C-BC07-CF570A632C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2316C4-B768-459C-BC07-CF570A632C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2316C4-B768-459C-BC07-CF570A632C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB64C36-B407-4CF1-8662-8FC705A94152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB64C36-B407-4CF1-8662-8FC705A94152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB64C36-B407-4CF1-8662-8FC705A94152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB64C36-B407-4CF1-8662-8FC705A94152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE3F67D-0AC5-4C99-9CCC-FF455BD979A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE3F67D-0AC5-4C99-9CCC-FF455BD979A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE3F67D-0AC5-4C99-9CCC-FF455BD979A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE3F67D-0AC5-4C99-9CCC-FF455BD979A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {13F6403A-E37C-4436-8C8C-5AEE47E138C9}
+		SolutionGuid = {B66D1B81-4449-4B21-91C0-52EC032FA0BF}
 	EndGlobalSection
 EndGlobal
