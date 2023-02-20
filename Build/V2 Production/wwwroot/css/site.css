@@ -33,3 +33,18 @@ body {
     width: 150px;
     margin-top: 1%;
 }
+
+table, th, td {
+    border: 1px solid;
+}
+
+.tableContainer {
+    height: 300px;
+    overflow: hidden;
+}
+
+.table {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
