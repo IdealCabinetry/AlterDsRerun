@@ -49,9 +49,14 @@ namespace AlterDSLib
         //protected static string InsertItem(int id, string name, string processedDate)
         //{
         //    return $@"
+        //        BEGIN TRANSACTION
         //        SET IDENTITY_INSERT [dbo].[Test_Ideal_Rerun_Log] ON
         //        INSERT INTO [dbo].[Test_Ideal_Rerun_Log] (id,item,ProcessedDate)
         //        VALUES ({id}, '{name}', '{processedDate}')
+        //        IF(@@ROWCOUNT = 1)
+        //        COMMIT TRANSACTION
+        //        ELSE
+        //        ROLLBACK TRANSACTION
         //    ";
         //}
         protected static string InsertItem(int id, string name, string processedDate)
@@ -70,7 +75,12 @@ namespace AlterDSLib
         //protected static string RemoveItemById(int id)
         //{
         //    return $@"
+        //        BEGIN TRANSACTION
         //        DELETE FROM [dbo].[Test_Ideal_Rerun_Log] WHERE id = {id}
+        //        IF(@@ROWCOUNT = 1)
+        //        COMMIT TRANSACTION
+        //        ELSE
+        //        ROLLBACK TRANSACTION
         //    ";
         //}
         protected static string RemoveItemById(int id)
@@ -88,9 +98,14 @@ namespace AlterDSLib
         //protected static string UpdateItem(int id, string name, string dateProcessed)
         //{
         //    return $@"
+        //        BEGIN TRANSACTION
         //        UPDATE [dbo].[Test_Ideal_Rerun_Log]
         //        SET item = '{name}', ProcessedDate = '{dateProcessed}'
         //        WHERE id = {id}
+        //        IF(@@ROWCOUNT = 1)
+        //        COMMIT TRANSACTION
+        //        ELSE
+        //        ROLLBACK TRANSACTION
         //    ";
         //}
 

@@ -1,0 +1,61 @@
+﻿@page
+@model AlterDsRerun.Pages.RerunLog.IndexModel
+
+@{
+    ViewData["Title"] = "Rerun Log Items";
+}
+
+<h1>DS Rerun Log Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        Search Id or Item: <input type="text" name="SearchString">
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+<form method="get">
+    <p>
+        <a asp-page="/Index">Get All Items</a>
+    </p>
+</form>
+<form method="post">
+
+    <button type="submit" value="Submit" class="btn btn-secondary btn-sm bottomAdjuster">Remove Selection</button>
+<table class="table">
+    <thead>
+        <tr>
+                <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ideal_DS_Rerun_Log[0].Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ideal_DS_Rerun_Log[0].ProcessedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Ideal_DS_Rerun_Log) {
+        <tr>
+                    <td>
+                        <input type="checkbox" name="id" asp-for="@item.IsChecked" value="@item.Id">
+                    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessedDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</form>

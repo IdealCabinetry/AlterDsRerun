@@ -1,0 +1,51 @@
+﻿@page
+@model AlterDsRerun.Pages.Test.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form method="post">
+
+    <button type="submit" value="Submit" class="btn btn-secondary btn-sm bottomAdjuster">Remove Selection</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Test_Ideal_Rerun_Log[0].Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Test_Ideal_Rerun_Log[0].ProcessedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Test_Ideal_Rerun_Log) {
+        <tr>
+                  
+            <td>
+                <input type="checkbox" name="id" asp-for="@item.IsChecked" value="@item.Id">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessedDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</form>
